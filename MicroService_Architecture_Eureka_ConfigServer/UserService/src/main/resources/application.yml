@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: UserService
+
+  config:
+    import: "configserver:http://localhost:7777"
+
+  cloud:
+    config:
+      fail-fast: true
+
+server:
+  port: 7708
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7779/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
